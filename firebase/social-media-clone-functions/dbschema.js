@@ -34,7 +34,7 @@ let db = {
             sender: '',
             read: true | false,
             screamId: '',
-            type: likes | comments,
+            type: 'likes' | 'comments',
             createdDate: '',
         }
     ]
