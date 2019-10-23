@@ -3,6 +3,7 @@ import axios from 'axios';
 import Grid from '@material-ui/core/Grid';
 import Quack from '../components/Quack';
 import Navbar from '../components/Navbar';
+import Profile from '../components/Profile';
 
 export default class home extends Component {
     state = {
@@ -28,7 +29,7 @@ export default class home extends Component {
                         {recentQuacks}
                     </Grid>
                     <Grid item sm={4} xs={12}>
-                        <p>profile</p>
+                        <Profile />
                     </Grid>
                 </Grid>
             </div>
