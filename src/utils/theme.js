@@ -3,13 +3,13 @@ export default {
         primary: {
             light: '#33c9dc',
             main: '#ec9b3b',
-            dark: '#008394',
+            dark: '#d78018',
             contrastText: '#fff',
         },
         secondary: {
             light: '#ff6333',
             main: '#657786',
-            dark: '#b22a00',
+            dark: '#485560',
             contrastText: '#fff',
         },
     },
@@ -35,7 +35,7 @@ export default {
         },
         textField: {
             margin: '10px auto',
-            width: '40%',
+            width: '100%',
             '& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline': {
                 borderColor: '#ec9b3b'
             },
@@ -53,8 +53,8 @@ export default {
                 padding: '13.5px 14px'
             }
         },
-        signupTextField: {
-            width: '100%'
+        halfWidthTextField: {
+            width: '40%'
         },
         button: {
             margin: '10px auto 10px',
@@ -138,7 +138,6 @@ export default {
             fontWeight: 'bold',
             '&:hover': {
                 boxShadow: 'none',
-                backgroundColor: '#d78018'
             },
         },
         signupForm: {
@@ -162,13 +161,58 @@ export default {
             boxShadow: 'none',
             '&:hover': {
                 boxShadow: 'none',
-                backgroundColor: '#d78018'
             },
         },
         small: {
             color: "#d78018",
             '&:hover': {
                 textDecoration: 'underline'
+            }
+        },
+        paper: {
+            padding: 20
+        },
+        profile: {
+            '& .image-wrapper': {
+                textAlign: 'center',
+                position: 'relative',
+                '& button': {
+                    position: 'absolute',
+                    top: '80%',
+                    left: '70%'
+                }
+            },
+            '& .profile-image': {
+                width: 200,
+                height: 200,
+                objectFit: 'cover',
+                maxWidth: '100%',
+                borderRadius: '50%',
+            },
+            '& .profile-details': {
+                textAlign: 'center',
+                '& span, svg': {
+                    verticalAlign: 'middle'
+                },
+                '& a': {
+                    color: '#ec9b3b',
+                }
+            },
+            '& hr': {
+                border: 'none',
+                margin: '0 0 10px 0'
+            },
+            '& svg.button': {
+                '&:hover': {
+                    cursor: 'pointer'
+                }
+            }
+        },
+        buttons: {
+            textAlign: 'center',
+            '& a': {
+                margin: '20px 10px',
+                width: '25%'
             }
         }
     }
