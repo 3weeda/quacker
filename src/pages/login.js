@@ -24,14 +24,17 @@ class login extends Component {
         password: '',
         errors: {}
     }
+    static getDerivedStateFromProps(props, state) {
+        if (props.UI.errors) {
+            return {
+                errors: props.UI.errors
+            };
+        }
+        return null;
+    }
 
     handleChange = e => {
         this.setState({ [e.target.name]: e.target.value })
-    }
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.UI.errors) {
-            this.setState({ errors: nextProps.UI.errors });
-        }
     }
     handleSubmit = e => {
         e.preventDefault();
@@ -70,7 +73,7 @@ class login extends Component {
                             name="email"
                             type="email"
                             label="Email"
-                            className={classes.textField}
+                            className={`${classes.textField} ${classes.halfWidthTextField}`}
                             helperText={errors.email}
                             error={errors.email ? true : false}
                             value={this.state.email}
@@ -81,7 +84,7 @@ class login extends Component {
                             name="password"
                             type="password"
                             label="Password"
-                            className={classes.textField}
+                            className={`${classes.textField} ${classes.halfWidthTextField}`}
                             helperText={errors.password}
                             error={errors.password ? true : false}
                             value={this.state.password}
@@ -93,7 +96,7 @@ class login extends Component {
                             color="primary"
                             className={`edged-button ${classes.button}`}
                             disabled={loading}>
-                            Log in
+                            Login
                             {loading && <CircularProgress size={30} className={classes.spinner} />}
                         </Button>
                     </form>
@@ -113,7 +116,7 @@ class login extends Component {
                             variant="contained"
                             color="primary"
                             className={`edged-button ${classes.signupButton}`}>
-                            <Link to="/signup">Sign up</Link>
+                            <Link to="/signup">Signup</Link>
                         </Button>
                     </div>
                 </Grid>

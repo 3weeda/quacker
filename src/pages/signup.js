@@ -24,13 +24,17 @@ class signup extends Component {
         errors: {}
     }
 
+    static getDerivedStateFromProps(props, state) {
+        if (props.UI.errors) {
+            return {
+                errors: props.UI.errors
+            };
+        }
+        return null;
+    }
+
     handleChange = e => {
         this.setState({ [e.target.name]: e.target.value })
-    }
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.UI.errors) {
-            this.setState({ errors: nextProps.UI.errors });
-        }
     }
     handleSubmit = e => {
         e.preventDefault();
@@ -59,7 +63,7 @@ class signup extends Component {
                             name="email"
                             type="email"
                             label="Email"
-                            className={`${classes.textField} ${classes.signupTextField}`}
+                            className={classes.textField}
                             helperText={errors.email}
                             error={errors.email ? true : false}
                             value={this.state.email}
@@ -72,7 +76,7 @@ class signup extends Component {
                             name="password"
                             type="password"
                             label="Password"
-                            className={`${classes.textField} ${classes.signupTextField}`}
+                            className={classes.textField}
                             helperText={errors.password}
                             error={errors.password ? true : false}
                             value={this.state.password}
@@ -85,7 +89,7 @@ class signup extends Component {
                             name="confirmPassword"
                             type="password"
                             label="Confirm Password"
-                            className={`${classes.textField} ${classes.signupTextField}`}
+                            className={classes.textField}
                             helperText={errors.confirmPassword}
                             error={errors.confirmPassword ? true : false}
                             value={this.state.confirmPassword}
@@ -98,7 +102,7 @@ class signup extends Component {
                             name="handle"
                             type="text"
                             label="Handle"
-                            className={`${classes.textField} ${classes.signupTextField}`}
+                            className={classes.textField}
                             helperText={errors.handle}
                             error={errors.handle ? true : false}
                             value={this.state.handle}
@@ -118,7 +122,7 @@ class signup extends Component {
                             className={`edged-button ${classes.wideSignupButton}`}
                             disabled={loading}
                         >
-                            Sign up
+                            Signup
                         {loading && (
                                 <CircularProgress size={30} className={classes.spinner} />
                             )}
