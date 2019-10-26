@@ -6,7 +6,6 @@ body,
     sans-serif;
   background-color: rgb(245, 245, 245);
   height: 100%;
-  overflow: hidden;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -16,9 +15,13 @@ body,
   height: 100%;
 }
 .home-container {
-  margin: 80px auto 0 auto;
+  margin: 0 auto;
   max-width: 1200px;
   padding: 0 30px;
+  transform: translateY(80px);
+}
+.nav-container svg {
+  color: #fff;
 }
 .h-center {
   margin: auto;
