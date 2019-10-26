@@ -1,38 +1,49 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
 import Quack from '../components/Quack';
 import Navbar from '../components/Navbar';
 import Profile from '../components/Profile';
+import { connect } from 'react-redux';
+import { getQuacks } from '../redux/actions/dataActions';
 
-export default class home extends Component {
-    state = {
-        quacks: null
-    }
+class home extends Component {
+
     componentDidMount() {
-        axios.get('/screams')
-            .then(res => {
-                console.log(res.data)
-                this.setState({ quacks: res.data })
-            })
-            .catch(err => console.log(err))
+        this.props.getQuacks();
     }
     render() {
-        let recentQuacks = this.state.quacks ? (
-            this.state.quacks.map(quack => <Quack quack={quack} key={quack.screamId} />)
+        const { data: { quacks, loading } } = this.props;
+        let recentQuacks = !loading ? (
+            quacks.map(quack => <Quack quack={quack} key={quack.screamId} />)
         ) : <p>Loading...</p>
         return (
-            <div className="home-container">
+            <>
                 <Navbar />
-                <Grid container spacing={2}>
-                    <Grid item sm={8} xs={12}>
-                        {recentQuacks}
+                <div className="home-container">
+                    <Grid container spacing={2}>
+                        <Grid item sm={4} xs={12}>
+                            <Profile />
+                        </Grid>
+                        <Grid item sm={8} xs={12}>
+                            {recentQuacks}
+                        </Grid>
                     </Grid>
-                    <Grid item sm={4} xs={12}>
-                        <Profile />
-                    </Grid>
-                </Grid>
-            </div>
+                </div>
+            </>
         )
     }
 }
+
+home.propTypes = {
+    getQuacks: PropTypes.func.isRequired,
+    data: PropTypes.object.isRequired
+}
+
+const mapStateToProps = state => ({
+    data: state.data
+})
+const mapActionsToProps = {
+    getQuacks
+}
+export default connect(mapStateToProps, mapActionsToProps)(home);
