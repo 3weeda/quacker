@@ -38,11 +38,6 @@ export default function (state = initialState, action) {
                 ...state,
             }
         case DELETE_QUACK:
-            // index = state.quacks.findIndex(quack => quack.screamId === action.payload.screamId);
-            // state.quacks.splice(index, 1);
-            // return {
-            //     ...state,
-            // }
             return {
                 ...state,
                 quacks: state.quacks.filter(quack => quack.screamId !== action.payload)
