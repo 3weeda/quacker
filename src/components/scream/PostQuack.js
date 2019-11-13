@@ -9,9 +9,9 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import AddIcon from '@material-ui/icons/Add'
 import CloseIcon from '@material-ui/icons/Close'
-import MyButton from '../utils/MyButton';
+import MyButton from '../../utils/MyButton';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import { postQuack, clearErrors } from '../redux/actions/dataActions';
+import { postQuack, clearErrors } from '../../redux/actions/dataActions';
 
 const styles = theme => ({
     ...theme.spreadableStyles,

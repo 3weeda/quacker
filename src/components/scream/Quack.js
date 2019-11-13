@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import { connect } from 'react-redux';
-import MyButton from '../utils/MyButton';
+import MyButton from '../../utils/MyButton';
 import ChatIcon from '@material-ui/icons/Chat';
 import DeleteQuack from './DeleteQuack';
 import PopupQuack from './PopupQuack';

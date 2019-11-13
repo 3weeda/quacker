@@ -5,10 +5,10 @@ import { connect } from 'react-redux';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
-import MyButton from '../utils/MyButton';
+import MyButton from '../../utils/MyButton';
 import HomeIcon from '@material-ui/icons/Home'
 import Notifications from '@material-ui/icons/Notifications'
-import PostQuack from './PostQuack';
+import PostQuack from '../scream/PostQuack';
 
 class Navbar extends Component {
     render() {
