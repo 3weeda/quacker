@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import MyButton from '../utils/MyButton';
+import MyButton from '../../utils/MyButton';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
-import { likeQuack, unlikeQuack } from '../redux/actions/dataActions';
+import { likeQuack, unlikeQuack } from '../../redux/actions/dataActions';
 
 class likeButton extends Component {
 

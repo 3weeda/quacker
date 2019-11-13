@@ -12,8 +12,8 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import CloseIcon from '@material-ui/icons/Close'
 import UnfoldMore from '@material-ui/icons/UnfoldMore';
 import ChatIcon from '@material-ui/icons/Chat';
-import MyButton from '../utils/MyButton';
-import { getQuack } from '../redux/actions/dataActions'
+import MyButton from '../../utils/MyButton';
+import { getQuack } from '../../redux/actions/dataActions'
 import LikeButton from './LikeButton';
 
 const styles = theme => ({

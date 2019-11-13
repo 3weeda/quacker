@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
-import Quack from '../components/Quack';
-import Navbar from '../components/Navbar';
-import Profile from '../components/Profile';
+import Quack from '../components/scream/Quack';
+import Navbar from '../components/layout/Navbar';
+import Profile from '../components/profile/Profile';
 import { connect } from 'react-redux';
 import { getQuacks } from '../redux/actions/dataActions';
 
